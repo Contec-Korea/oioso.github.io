@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      {% include post-tile.html post=post %}
+      {%- endfor -%}
+    </ul>
+
+  {%- endif -%}
+
+</div>
