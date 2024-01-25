@@ -4,15 +4,36 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## 컨텍 응용소프트웨어팀 (이하 응소팀:cow:)
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+```
+응용소프트웨어팀은 컨텍의 글로벌 우주지상국의 소프트웨어와 
+플랫폼의 개발, 운영, 유지보수를 담당합니다.
+```
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+### :computer: 응소팀의 업무
+컨텍 그리고 고객의 지상국 운영 소프트웨어를 설계부터 개발, 통합 시험까지 필요한 기술 개발 업무를 모두 담당하고 있습니다.
 
+또한, 지상국 네트워크를 운영함에 있어 필요한 위성영상 수신 및 분석, 지상국 운용에 필요한 장비를 제어하는 소프트웨어와 컨텍의 글로벌 위성 영상 관련 자체 플랫폼을 개발하고 있습니다.
 
-[jekyll-organization]: https://github.com/jekyll
+### :octocat: 응소팀의 개발 문화
+- **기술 세미나**    
+  트러블 슈팅이나, 새로운 기술들을 세미나를 통해 팀원들에게 공유합니다.    
+  응소팀의 구성원이라면 누구나 자원해서 진행할 수 있습니다.
+- **신입사원 교육**    
+  2주간 신입사원 온보딩 교육을 통해 응소팀의 전반적인 업무를 대략적으로 파악하고    
+  팀원들과 친밀해지는 시간을 갖습니다.    
+  또한 이후 파일럿 프로젝트를 통해 응소팀의 개발 환경에 적응할 수 있도록 돕습니다.
+
+### :office: 응소팀의 개발 환경
+- **Front-End**
+    - Vue.js를 사용합니다.
+    - TypeScript를 사용합니다.
+    - Jest, Cypress로 테스트를 도입하고 있습니다.
+    - 상태관리 라이브러리인 Pinia를 사용합니다.
+- **Back-End**
+    - Java 및 Spring, Python을 사용합니다.
+    - Git을 이용하여 소스관리를 합니다.
+    - Test는 REST Assured로 진행하며, REST Docs로 프론트엔드와 협업합니다.
+    - GitHub Action으로 빌드 및 배포를 합니다.
+    - AWS Cloud를 사용합니다.

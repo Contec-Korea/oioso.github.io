@@ -31,6 +31,8 @@ github_username:  Contec-Korea
 theme: minima
 plugins:
   - jekyll-feed
+  - jemoji
+  - jekyll-avatar
 #gems:
 #  - jekyll-avatar
 
