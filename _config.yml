@@ -41,6 +41,7 @@ markdown: kramdown
 #remote_theme: jekyll/minima
 highlighter: rouge
 permalink: /:year/:month/:day/:title.html
+asset_url: /assets
 #plugins:
 #  - jekyll-remote-theme
 #  - jekyll-feed
