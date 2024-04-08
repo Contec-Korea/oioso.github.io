@@ -1,8 +1,28 @@
 ---
 layout: post
-title:  "응소팀의 첫 포스팅"
-date:   2024-01-19 09:42:00 +0900
-author: jinny 
+title:  응소팀의 첫 포스팅
+subtitle: From scratch
+author: jinny
 ---
 
-응용소프트웨어팀 기술블로그의 첫 포스팅입니다.
+응용소프트웨어팀 기술블로그의 첫 포스팅입니다.</br>
+
+```angular2html
+해당 파일의 제목은 'YYYY-MM-DD-[제목].md'입니다.
+
+* layout
+> 기본: post로 설정 
+
+* title
+> 제목을 적어주세요.
+
+* subtitle
+> 옵션입니다.
+
+* date
+> 날짜를 지정할 수 있으나, 적용하지 않으면 포스팅한 날짜가 자동으로 적용됩니다.
+
+* author
+작성자의 영어 이름을 작성하시면 됩니다.
+해당 내용은 _data/authors.yml에 정의되어 있습니다.
+```
