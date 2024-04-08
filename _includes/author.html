@@ -16,14 +16,14 @@
         </span>
     </span>
 {%- elsif post.author -%}
-<span class="single-author">
+    <span class="single-author">
         {% assign author = site.data.authors[post.author] %}
         {%- if author.username  -%}
         {%- endif -%}
         {%- if include_email -%}
         <span class="author" itemprop="name">{{ author.name }} ({{ author.email }})</span>
         {%- else -%}
-        <span class="author" itemprop="name">{{ author.name }}</span>
+        <span class="author" itemprop="name">{{ author.username }}</span>
         {%- endif -%}
     </span>
 {%- endif -%}
