@@ -5,7 +5,7 @@ subtitle: From scratch
 author: jinny
 ---
 
-응용소프트웨어팀 기술블로그의 첫 포스팅입니다.</br>
+응용소프트웨어팀 기술블로그의 첫 포스팅입니다.
 
 ```angular2html
 해당 파일의 제목은 'YYYY-MM-DD-[제목].md'입니다.
