@@ -22,15 +22,15 @@ author: liz
 > 회사의 규모도 큰 편이 아니어서 적극적으로 지원하지는 않는 상황이었습니다. 열정있는 사람이 있으면 해봐라 하는 정도였죠.
 > 그래서, 대안으로 생각한 것은 현재 상태대로 그대로 가느냐 아니면 Github를 활용해서 프로세스를 정립해 보느냐 두가지 선택지가 있었습니다.
 > 
-> 운이 좋았는지 Github Free버전을 사용하고 있었으나, 우리팀은 Team 버전을 사용하는 예산을 확보하게 되었다.
+> 운이 좋았는지 Github Free버전을 사용하고 있었으나, 우리팀은 Team 버전을 사용하는 예산을 확보하게 되었습니다.
 > * Free 버전의 경우 Packages storage 한도 500MB, CI/CD 실행시간 2,000분/월
 > * Team 버전의 경우 Packages storage 한도 2GB, CI/CD 실행시간 3,000분/월 
 > 
-> 더이상 고민할 이유가 없게 되었다.
+> 더이상 고민할 이유가 없게 되었습니다.
 
 Github Actions에 대하여..
 ===
-> 소프트웨어 Workflow를 자동화할 수 있도록 도와주는 도구이다. 간단히 설명하면 아래 순서로 CI 자동화를 구현하였다.
+> 소프트웨어 Workflow를 자동화할 수 있도록 도와주는 도구입니다. 간단히 설명하면 아래 순서로 CI 자동화를 구현하였습니다.
 > 1. 개발자들은 브랜치를 develop 브랜치에 pull request해서 머지가 되는 순간(Event)에 Maven build 라이프사이클을 실행한다. 
 > 2. 빌드 라이프사이클에 Test단계가 포함되어 있고 만약 테스트는 로컬에서 실행한다면 이 단계는 건너뛸 수도 있다.
 > 3. 빌드가 성공하면 필요한 파일들, e.g) jar/yml/shell script 등을 Zip 압축하여 S3에 업로드시킨다.
@@ -44,7 +44,7 @@ Pre-requisition
 
 Details
 ===
-> 아래 action 파일은 github repository/.github/workflows/ 위치해 있다.
+> 아래 action 파일은 github repository/.github/workflows/ 위치해 있습니다.
 > 
 
 <pre>
