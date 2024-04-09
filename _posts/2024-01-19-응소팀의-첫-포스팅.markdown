@@ -1,13 +1,12 @@
 ---
 layout: post
-title:  응소팀의 첫 포스팅
-subtitle: From scratch
+title: 포스팅 파일 가이드 
 author: jinny
 ---
 
 응용소프트웨어팀 기술블로그의 첫 포스팅입니다.
 
-```angular2html
+```
 해당 파일의 제목은 'YYYY-MM-DD-[제목].md'입니다.
 
 * layout
