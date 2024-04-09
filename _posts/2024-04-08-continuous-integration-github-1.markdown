@@ -48,6 +48,8 @@ Details
 > 
 > 
 ```yaml
+name: Build and Slack
+
 # develop 브랜치에 pull request한 변경사항이 Merged 되는 시점에 해당 workflow가 실행된다.
 on:
   pull_request:
