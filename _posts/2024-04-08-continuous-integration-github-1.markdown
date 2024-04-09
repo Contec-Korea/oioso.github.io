@@ -46,8 +46,9 @@ Details
 ===
 > 아래 action 파일은 github repository/.github/workflows/ 위치해 있다.
 > 
-> 
-```
+
+<pre>
+<code>
 name: Build and Slack
 
 # develop 브랜치에 pull request한 변경사항이 Merged 되는 시점에 해당 workflow가 실행된다.
@@ -107,7 +108,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ build ]
 
-```
+</code>
+</pre>
 
 Pros and Cons
 ===
