@@ -3,8 +3,10 @@ layout: page
 title: About
 permalink: /about/
 ---
-<img src="/assets/images/oioso_logo_by_ai.png" width="500px" height="500px" title="응소 로고"></img>
 
+<div style="text-align: center">
+<img src="./assets/images/oioso_logo_by_ai.png" title="응소 로고"></img>
+</div>
 ## 컨텍 응용소프트웨어팀 (이하 응소팀:cow:)
 
 ```
