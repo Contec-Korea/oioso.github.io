@@ -31,7 +31,7 @@ layout: default
     <div class="col-12">
       Tags:
       {% for tag in page.tags %}
-      <a href="/t/{{ tag | downcase | replace: ' ', '-' }}" class="post">#{{ tag }}</a>
+      <a href="{{ '/' | relative_url }}/t/{{ tag | downcase | replace: ' ', '-' }}" class="post">#{{ tag }}</a>
       {% endfor %}
     </div>
   </div>
