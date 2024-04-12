@@ -2,6 +2,7 @@
 layout: post
 title: 포스팅 파일 가이드 
 author: jinny
+tags: "github"
 ---
 
 응용소프트웨어팀 기술블로그의 첫 포스팅입니다.

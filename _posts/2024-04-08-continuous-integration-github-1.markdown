@@ -2,6 +2,7 @@
 layout: post
 title: 응소팀 CI 첫걸음
 author: liz
+tags: ["ci" "github"]
 ---
 
 어디에서 필요해요?
