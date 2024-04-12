@@ -11,7 +11,7 @@
         <span class="author" itemprop="name">
         {%- for author_id in post.authors -%}
             {% assign author = site.data.authors[author_id] %}
-            {{ author.name }}{% if forloop.last == false %}, {% endif %}
+            {{ author.username }}{% if forloop.last == false %}, {% endif %}
         {%- endfor -%}
         </span>
     </span>
@@ -23,7 +23,7 @@
         {%- if include_email -%}
         <span class="author" itemprop="name">{{ author.name }}</span>
         {%- else -%}
-        <span class="author" itemprop="name">{{ author.username }}</span>
+        <span class="author" itemprop="name">{{ author.username }}, {{ author.name }}</span>
         {%- endif -%}
     </span>
 {%- endif -%}
