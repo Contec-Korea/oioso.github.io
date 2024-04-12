@@ -17,16 +17,9 @@
     </h3>
     <div class="post-meta">
         {% include author.html include_email=false %}
-        <time>{{ post.date | date: date_format }}</time>
+        Posted on <time>{{ post.date | date: date_format }}</time>
     </div>
     {%- if site.show_excerpts -%}
     <div class="post-excerpt">{{ post.excerpt }}</div>
     {%- endif -%}
-    <div>
-        <span class="tags">
-        {% for tag in post.tags %}
-        {% capture tag_name %}{{ tag }}{% endcapture %}
-        {% endfor %}
-        </span>
-    </div>
 </li>

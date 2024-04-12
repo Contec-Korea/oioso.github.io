@@ -1,0 +1,16 @@
+vue: Vue Framework
+typescript: TypeScript
+spring: Spring Framework
+github: Github
+ci: Continuous Integration
+cd: Continuous Deployment
+sqs: AWS SQS
+js: Javascript
+jpa: JPA
+boot: Spring Boot
+maven: Maven
+gradle: Gradle
+s3: AWS S3
+ec2: AWS EC2
+activemq: ActiveMQ
+websocket: Websocket

@@ -18,6 +18,11 @@ layout: default
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
+    {% if page.tags %} {% for tag in page.tags %} {% if site.data.tags contains tag
+    %}
+    <span class="tag">{{ site.data.format[tag] }}</span>
+    {% endif %} {% endfor %} {% endif %}
+
     {{ content }}
   </div>
 
