@@ -1,11 +1,11 @@
 ---
 layout: tag
-title: "Tag: Jekyll"
+title: "Tag-github"
 permalink: /t/jekyll
 ---
 
 <ul class="post-list">
-  {%- for post in site.tags["jekyll"] -%}
+  {%- for post in site.tags["github"] -%}
     <li>
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <span class="post-meta">
