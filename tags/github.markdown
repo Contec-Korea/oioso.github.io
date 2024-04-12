@@ -1,7 +1,7 @@
 ---
 layout: tag
 title: "Tag-github"
-permalink: /t/jekyll
+permalink: /t/github
 ---
 
 <ul class="post-list">
