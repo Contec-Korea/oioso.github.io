@@ -7,12 +7,9 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
-  <span>[
-  {% for tag in page.tags %}
-    {% capture tag_name %}{{ tag }}{% endcapture %}
-    <a href="/t/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+  {% for tag in site.data.tags %}
+  <span class="tag" data-tag="{{tag}}">{{ site.data.format[tag] }}</span>
   {% endfor %}
-]</span>
 
   {{ content }}
 
@@ -27,3 +24,22 @@ layout: default
   {%- endif -%}
 
 </div>
+
+<script>
+$('[data-tag]').click((e) => {
+  currentTag = e.target.dataset.tag;
+  filterByTagName(currentTag);
+});
+
+function filterByTagName(tagName) {
+  $('.hidden').removeClass('hidden');
+  $('.post-wrapper').each((index, elem) => {
+    if (!elem.hasAttribute(`data-${tagName}`)) {
+      $(elem).addClass('hidden');
+    }
+  });
+
+  $('.tag').removeClass('selected');
+  $('.tag[data-tag=${tagName}]').addClass('selected');
+}
+</script>
