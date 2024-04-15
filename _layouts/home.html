@@ -8,7 +8,7 @@ layout: default
   {%- endif -%}
 
   {% for tag in site.data.tags %}
-  <span class="tag" data-tag="{{tag}}"><a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">{{ site.data.format[tag] }}</a></span>
+  <span class="badge rounded-pill bg-primary" data-tag="{{tag}}"><a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">{{ site.data.format[tag] }}</a></span>
   {% endfor %}
 
   {{ content }}
