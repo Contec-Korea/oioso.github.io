@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: "Tag-github"
+title: "Tag: github"
 permalink: /t/github
 ---
 

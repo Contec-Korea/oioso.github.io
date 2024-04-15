@@ -7,10 +7,12 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
-  {%- for tag in site.tags -%}
-  {%- if site.data.tags contains tag -%}
-  <span class="tag">{{ site.data.format[tag] }}</span>
-  {%- endif -%} {%- endfor -%}
+  <span>[
+  {% for tag in page.tags %}
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <a href="/t/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+  {% endfor %}
+]</span>
 
   {{ content }}
 
