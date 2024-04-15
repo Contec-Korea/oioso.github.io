@@ -16,7 +16,7 @@ url: https://contec-korea.github.io/oioso.github.io # the base hostname & protoc
 github_username:  Contec-Korea
 
 # Build settings
-theme: minima
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
   - jemoji
