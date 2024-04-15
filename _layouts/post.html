@@ -31,7 +31,7 @@ layout: default
     <div class="col-12">
       {% if page.tags %} {% for tag in page.tags %} {% if site.data.tags contains tag
       %}
-      <span class="tag"><a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">{{ site.data.format[tag] }}</a></span>
+      <span class="badge rounded-pill bg-primary text-dark"><a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">{{ site.data.format[tag] }}</a></span>
       {% endif %} {% endfor %} {% endif %}
     </div>
   </div>
