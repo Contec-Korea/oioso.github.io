@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 포스팅 파일 가이드 
+title: "[HowTo] 포스팅 파일 이름 가이드"
 author: jinny
-tags: "github"
+tags: [github, jekyll]
 ---
 
 응용소프트웨어팀 기술블로그의 첫 포스팅입니다.
