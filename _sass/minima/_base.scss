@@ -40,7 +40,10 @@ ul, ol, dl, figure,
   margin-bottom: $spacing-unit / 2;
 }
 
-
+h1 {
+  text-align: center;
+  color: gray;
+}
 
 /**
  * `main` element
@@ -48,7 +51,13 @@ ul, ol, dl, figure,
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
-
+main > div {
+  height: 10rem;
+  margin: 2rem;
+  border: darkgrey 1px solid;
+  border-radius: 8px;
+  overflow: hidden;
+}
 
 
 /**
