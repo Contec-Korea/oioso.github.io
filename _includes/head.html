@@ -6,7 +6,8 @@
   <link rel="stylesheet" href='{{ "/assets/main.css" | relative_url }}'>
   <link href="{{ site.asset_url }}/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
   {%- feed_meta -%}
-  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
-  {%- endif -%}
+
+  {% if site.tags != "" %}
+  {% include collecttags.html %}
+  {% endif %}
 </head>
