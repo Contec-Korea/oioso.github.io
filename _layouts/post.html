@@ -29,10 +29,10 @@ layout: default
 
   <div class="row">
     <div class="col-12">
-      Tags:
-      {% for tag in page.tags %}
+      {% if page.tags %} {% for tag in page.tags %} {% if site.data.tags contains tag
+      %}
       <span class="tag"><a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">{{ tag }}</a></span>
-      {% endfor %}
+      {% endif %} {% endfor %} {% endif %}
     </div>
   </div>
 </article>
