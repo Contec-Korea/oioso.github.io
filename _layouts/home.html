@@ -1,29 +1,19 @@
 ---
 layout: default
 ---
-
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
+<div class="post-preview"
   {% for tag in site.data.tags %}
   <span class="badge rounded-pill bg-primary text-dark" data-tag="{{tag}}"><a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">{{ site.data.format[tag] }}</a></span>
   {% endfor %}
+</div>
 
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "" }}</h2>
-    <ul class="post-list">
       {%- for post in site.posts -%}
       {% include post-tile.html post=post %}
       {%- endfor -%}
-    </ul>
-
   {%- endif -%}
-
-</div>
 
 <script>
 $('[data-tag]').click((e) => {
