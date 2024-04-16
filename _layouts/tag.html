@@ -2,15 +2,21 @@
 layout: default
 ---
 
-<div class="post">
-  <h1>Tag: {{ page.tag }}</h1>
-  <ul>
-    {% for post in site.tags[page.tag] %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})<br>
-      {{ post.description }}
-    </li>
-    {% endfor %}
-  </ul>
-</div>
-<hr>
+{%- include header.html where="tag" -%}
+
+<main class="mb-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <ul>
+          {% for post in site.tags[page.tag] %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})<br>
+            {{ post.description }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
 
