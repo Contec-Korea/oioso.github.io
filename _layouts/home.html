@@ -2,34 +2,36 @@
 layout: default
 ---
 <div class="post-preview"
-  {% for tag in site.data.tags %}
-  <span class="badge rounded-pill bg-primary text-dark" data-tag="{{tag}}"><a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">{{ site.data.format[tag] }}</a></span>
-  {% endfor %}
+     {% for tag in site.data.tags %}
+<span class="badge rounded-pill bg-primary text-dark" data-tag="{{tag}}">
+    <a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">{{ site.data.format[tag] }}</a>
+</span>
+{% endfor %}
 </div>
 
-  {{ content }}
+{{ content }}
 
-  {%- if site.posts.size > 0 -%}
-      {%- for post in site.posts -%}
-      {% include post-tile.html post=post %}
-      {%- endfor -%}
-  {%- endif -%}
+{%- if site.posts.size > 0 -%}
+{%- for post in site.posts -%}
+{% include post-tile.html post=post %}
+{%- endfor -%}
+{%- endif -%}
 
 <script>
-$('[data-tag]').click((e) => {
-  currentTag = e.target.dataset.tag;
-  filterByTagName(currentTag);
-});
+    $('[data-tag]').click((e) => {
+        currentTag = e.target.dataset.tag;
+        filterByTagName(currentTag);
+    });
 
-function filterByTagName(tagName) {
-  $('.hidden').removeClass('hidden');
-  $('.post-wrapper').each((index, elem) => {
-    if (!elem.hasAttribute(`data-${tagName}`)) {
-      $(elem).addClass('hidden');
+    function filterByTagName(tagName) {
+        $('.hidden').removeClass('hidden');
+        $('.post-wrapper').each((index, elem) => {
+            if (!elem.hasAttribute(`data-${tagName}`)) {
+                $(elem).addClass('hidden');
+            }
+        });
+
+        $('.tag').removeClass('selected');
+        $('.tag[data-tag=${tagName}]').addClass('selected');
     }
-  });
-
-  $('.tag').removeClass('selected');
-  $('.tag[data-tag=${tagName}]').addClass('selected');
-}
 </script>
