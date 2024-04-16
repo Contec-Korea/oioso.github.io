@@ -2,7 +2,8 @@
     <div class="container px-4 px-lg-5">
         {%- assign default_paths = site.pages | map: "path" -%}
         {%- assign page_paths = site.header_pages | default: default_paths -%}
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+        <img class="site-logo" src="{{ site.asset_url | relative_url }}/images/oio.svg" alt="logo" />
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"

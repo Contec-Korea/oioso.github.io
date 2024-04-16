@@ -1,24 +1,28 @@
 {%- assign post = include.post -%}
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-
-<div class="post-preview" {%- if post.tags -%}{%- for tag in post.tags -%}data-{{tag}}{%- endfor -%}{%- endif -%}>
-    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-    <a href="{{ post.url | relative_url }}">
-        <h2 class="post-title">{{ post.title | escape }}</h2>
-        {%- if site.show_excerpts -%}
-        <h3 class="post-subtitle">{{ post.excerpt }}</h3>
-        {%- endif -%}
-    </a>
-    <p class="post-meta">
-        {%- for tag in post.tags -%}
-        <a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
-            #{{ tag }}
-        </a>&nbsp;
-        {%- endfor -%}
-    </p>
-    <p class="post-meta">
-        Posted by
+<a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+<li class="post-preview">
+    <div class="post-meta">
         {% include author.html include_email=false %}
-        on <time>{{ post.date | date: date_format }}</time>
-    </p>
-</div>
+        Posted on <time>{{ post.date | date: date_format }}</time>
+    </div>
+
+    <h1>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+        </a>
+    </h1>
+    {%- if site.show_excerpts -%}
+    <div class="post-excerpt">{{ post.excerpt }}</div>
+    {%- endif -%}
+
+    <div class="post-meta hashtag-box">
+        {%- for tag in post.tags -%}
+        <a class="hashtag" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
+          #{{ tag }}
+        </a>
+        {%- endfor -%}
+    </div>
+</li>
+
+

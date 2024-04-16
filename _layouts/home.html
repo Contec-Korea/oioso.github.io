@@ -1,19 +1,24 @@
 ---
 layout: default
 ---
-<div class="post-preview"
-  {% for tag in site.data.tags %}
-  <span class="badge rounded-pill bg-primary text-dark" data-tag="{{tag}}"><a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">{{ site.data.format[tag] }}</a></span>
-  {% endfor %}
+<div class="post-hashtag hashtag-box">
+    {% for tag in site.data.tags %}
+    <a class="hashtag" data-tag="{{tag}}" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
+        #{{ site.data.format[tag] }}
+    </a>
+    {% endfor %}
 </div>
 
-  {{ content }}
+{{ content }}
 
-  {%- if site.posts.size > 0 -%}
-      {%- for post in site.posts -%}
-      {% include post-tile.html post=post %}
-      {%- endfor -%}
-  {%- endif -%}
+{%- if site.posts.size > 0 -%}
+<ul class="post-list">
+  {%- for post in site.posts -%}
+  {% include post-tile.html post=post %}
+  {%- endfor -%}
+</ul>
+
+{%- endif -%}
 
 <script>
 $('[data-tag]').click((e) => {

@@ -2,7 +2,6 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
 
@@ -170,8 +169,6 @@
   }
 }
 
-
-
 /**
  * Page content
  */
@@ -190,11 +187,16 @@
 
 .post-list {
   margin-left: 0;
+  padding-left: 0;
   list-style: none;
 
   > li {
     margin-bottom: $spacing-unit;
     border-bottom: 1px solid #ddd;
+
+    &:nth-last-child(1) {
+      border-bottom: 0;
+    }
   }
 }
 
@@ -214,12 +216,11 @@
 }
 
 .post-link {
-  font-weight: 600;
   display: block;
-  @include relative-font-size(1.5);
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 1rem;
 }
-
-
 
 /**
  * Posts
@@ -241,6 +242,14 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
+
+  h1 {
+    @include relative-font-size(2.375);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(2.125);
+    }
+  }
 
   h2 {
     @include relative-font-size(2);
@@ -264,5 +273,97 @@
     @include media-query($on-laptop) {
       @include relative-font-size(1.125);
     }
+  }
+}
+
+.masthead {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-top: calc(8rem + 57px);
+  padding-bottom: 8rem;
+  background: #6c757d no-repeat scroll center center;
+  background-size: cover;
+
+  .site-heading {
+    text-align: center;
+    color: #fff;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #212529;
+    opacity: 0.5;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 12.5rem;
+    padding-bottom: 12.5rem;
+
+    .site-heading h1 {
+      font-size: 3rem;
+    }
+  }
+}
+
+.post-preview {
+  margin-bottom: $spacing-unit;
+  .post-link {
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.hashtag-box {
+  display: flex;
+  gap: 8px 5px;
+  flex-wrap: wrap;
+  margin-bottom: $spacing-unit;
+
+  .hashtag {
+    text-decoration: none;
+    font-size: 13px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 12px;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 17px;
+    color: #757575;
+    display: inline-block;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+.navbar  {
+  .site-logo {
+    width: 30px;
+    height: 54px;
+    padding-right: 10px;
+    float: left;
+  }
+
+  .navbar-brand,
+  .nav-item{
+    font-weight: 800;
   }
 }
