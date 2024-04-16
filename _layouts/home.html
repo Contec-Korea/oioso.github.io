@@ -1,40 +1,50 @@
 ---
 layout: default
 ---
-<div class="post-hashtag hashtag-box">
-    {% for tag in site.data.tags %}
-    <a class="hashtag" data-tag="{{tag}}" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
-        #{{ site.data.format[tag] }}
-    </a>
-    {% endfor %}
+{%- include header.html where="home" -%}
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Tag list -->
+            <div class="post-hashtag hashtag-box">
+                {% for tag in site.data.tags %}
+                <a class="hashtag" data-tag="{{tag}}" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
+                    #{{ site.data.format[tag] }}
+                </a>
+                {% endfor %}
+            </div>
+            <!-- Divider-->
+            <hr class="my-4" />
+
+            {{ content }}
+
+            {%- if site.posts.size > 0 -%}
+            <ul class="post-list">
+                {%- for post in site.posts -%}
+                {% include post-tile.html post=post %}
+                {%- endfor -%}
+            </ul>
+
+            {%- endif -%}
+        </div>
+    </div>
 </div>
 
-{{ content }}
-
-{%- if site.posts.size > 0 -%}
-<ul class="post-list">
-  {%- for post in site.posts -%}
-  {% include post-tile.html post=post %}
-  {%- endfor -%}
-</ul>
-
-{%- endif -%}
-
 <script>
-$('[data-tag]').click((e) => {
-  currentTag = e.target.dataset.tag;
-  filterByTagName(currentTag);
-});
+    $('[data-tag]').click((e) => {
+        currentTag = e.target.dataset.tag;
+        filterByTagName(currentTag);
+    });
 
-function filterByTagName(tagName) {
-  $('.hidden').removeClass('hidden');
-  $('.post-wrapper').each((index, elem) => {
-    if (!elem.hasAttribute(`data-${tagName}`)) {
-      $(elem).addClass('hidden');
+    function filterByTagName(tagName) {
+        $('.hidden').removeClass('hidden');
+        $('.post-wrapper').each((index, elem) => {
+            if (!elem.hasAttribute(`data-${tagName}`)) {
+                $(elem).addClass('hidden');
+            }
+        });
+
+        $('.tag').removeClass('selected');
+        $('.tag[data-tag=${tagName}]').addClass('selected');
     }
-  });
-
-  $('.tag').removeClass('selected');
-  $('.tag[data-tag=${tagName}]').addClass('selected');
-}
 </script>

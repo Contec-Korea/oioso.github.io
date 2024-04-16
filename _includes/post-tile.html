@@ -1,7 +1,8 @@
 {%- assign post = include.post -%}
-{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-<a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+{%- assign date_format = site.minima.date_format | default: "%-d %B, %Y" -%}
+
 <li class="post-preview">
+    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
     <div class="post-meta">
         {% include author.html include_email=false %}
         Posted on <time>{{ post.date | date: date_format }}</time>
