@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Tag list -->
+            <div class="post-preview"
+                 {% for tag in site.data.tags %}
+            <span class="badge rounded-pill bg-primary text-dark" data-tag="{{tag}}">
+                        <a href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">{{ site.data.format[tag] }}</a>
+                    </span>
+            {% endfor %}
+            </div>
+            <!-- Divider -->
+            <hr class="my-4"/>
+
+            {{ content }}
+
+        </div>
+    </div>
+</div>

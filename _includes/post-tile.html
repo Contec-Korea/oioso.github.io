@@ -1,5 +1,5 @@
 {%- assign post = include.post -%}
-{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+{%- assign date_format = site.minima.date_format | default: "%-d %B, %Y" -%}
 
 <div class="post-preview" {%- if post.tags -%}{%- for tag in post.tags -%}data-{{tag}}{%- endfor -%}{%- endif -%}>
     <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
@@ -19,6 +19,8 @@
     <p class="post-meta">
         Posted by
         {% include author.html include_email=false %}
-        on <time>{{ post.date | date: date_format }}</time>
+        on {{ post.date | date: date_format }}
     </p>
+    <!-- Divider-->
+    <hr class="my-4" />
 </div>
