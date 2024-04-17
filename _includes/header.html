@@ -1,7 +1,7 @@
-{%- assign header_image = '/assets/images/home-bg.jpg' | relative_url -%}
 {%- assign where = include.where -%}
-{%- if where == "home" -%}
-<header class="masthead" style="{{ 'background-image:' | append: 'url(' | append: header_image | append: ')' }}">
+
+{% if where == "home" %}
+<header class="masthead" style="background-image: url('assets/images/home-bg.jpg')">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -13,18 +13,43 @@
         </div>
     </div>
 </header>
-{%- endif -%}
-{%- if where == "about" -%}
-<header class="masthead" style="{{ 'background-image:' | append: 'url(' | append: header_image | append: ')' }}">
+{% elsif where == "about" %}
+<header class="masthead" style="background-image: url('assets/images/about-bg.jpg')">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="site-heading">
-                    <h1>About OIOSO</h1>
+                    <h1>About "OIOSO"</h1>
                     <span class="subheading">This is what we do.</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
-{%- endif -%}
+{% elsif where == "tag" %}
+<header class="masthead" style="background-image: url('assets/images/tag-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Tag::{{ page.tag }}</h1>
+                    <span class="subheading">관련 태그 모음입니다.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% elsif where == "post" %}
+<header class="masthead" style="background-image: url('assets/images/post-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Post::</h1>
+                    <span class="subheading">포스트 내용입니다.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endif %}
