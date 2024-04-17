@@ -1,7 +1,7 @@
 {%- assign where = include.where -%}
 
 {% if where == "home" %}
-<header class="masthead" style="background-image: url('assets/images/home-bg.jpg')">
+<header class="masthead" style="background-image: url({{ '/assets/images/home-bg.jpg' | relative_url}})">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -14,7 +14,7 @@
     </div>
 </header>
 {% elsif where == "about" %}
-<header class="masthead" style="background-image: url('assets/images/about-bg.jpg')">
+<header class="masthead" style="background-image: url({{ '/assets/images/oioso_logo_by_ai.png' | relative_url}})">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -40,13 +40,19 @@
     </div>
 </header>
 {% elsif where == "post" %}
-<header class="masthead" style="background-image: url('assets/images/post-bg.jpg')">
+<header class="masthead" style="background-image: url({{ '/assets/images/home-bg.jpg' | relative_url}})">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="site-heading">
-                    <h1>Post::</h1>
-                    <span class="subheading">포스트 내용입니다.</span>
+                    <h1>{{ page.title }}</h1>
+                    <span class="subheading">
+                        <time class="dt-published" datetime="{{ include.date | date: date_format }}" itemprop="datePublished">
+                            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                            {{ page.date | date: date_format }}
+                        </time>
+                        •{% include author.html post=page avatar_size=40 %}
+                    </span>
                 </div>
             </div>
         </div>
