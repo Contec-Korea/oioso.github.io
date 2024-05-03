@@ -5,9 +5,15 @@
         <img class="site-logo" src="{{ site.asset_url | relative_url }}/images/oio.svg" alt="logo" />
         <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
             Menu
             <i class="fas fa-bars"></i>
         </button>
@@ -17,14 +23,20 @@
                 {%- for path in page_paths -%}
                 {%- assign my_page = site.pages | where: "path", path | first -%}
                 {%- if my_page.title -%}
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                                        href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                <li class="nav-item">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ my_page.url | relative_url }}">
+                        {{ my_page.title | escape }}
+                    </a>
                 </li>
                 {%- endif -%}
                 {%- endfor -%}
+                <li class="nav-item">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="https://kr.contec.kr/gwbbs/gw_page18.php?ti=cate4&me_co=4010">
+                        CAREER
+                    </a>
+                </li>
             </ul>
         </div>
-
         {%- endif -%}
     </div>
 </nav>
