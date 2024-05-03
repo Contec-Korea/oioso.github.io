@@ -20,7 +20,7 @@
     <div class="post-meta hashtag-box">
         {%- for tag in post.tags -%}
         <a class="hashtag" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
-          #{{ tag }}
+            #{{ site.data.format[tag] }}
         </a>
         {%- endfor -%}
     </div>
