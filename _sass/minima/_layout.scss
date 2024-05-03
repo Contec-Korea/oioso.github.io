@@ -347,6 +347,7 @@
     vertical-align: middle;
     white-space: nowrap;
 
+    &.active,
     &:hover {
       background-color: $primary-color;
       color: white;

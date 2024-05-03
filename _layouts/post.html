@@ -29,7 +29,7 @@ layout: default
 
     <!-- Tag list -->
     <div class="post-hashtag hashtag-box">
-      {% for tag in site.data.tags %}
+      {% for tag in page.tags %}
       <a class="hashtag" data-tag="{{tag}}" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
         #{{ site.data.format[tag] }}
       </a>
