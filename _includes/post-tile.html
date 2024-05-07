@@ -5,7 +5,7 @@
     <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
     <div class="post-meta">
         {% include author.html include_email=false %}
-        Posted on <time>{{ post.date | date: date_format }}</time>
+        <span>Posted on <time>{{ post.date | date: date_format }}</time></span>
     </div>
 
     <h1>

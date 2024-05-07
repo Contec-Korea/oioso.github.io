@@ -1,9 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-    <div class="container px-4 px-lg-5">
+    <div class="container">
         {%- assign default_paths = site.pages | map: "path" -%}
         {%- assign page_paths = site.header_pages | default: default_paths -%}
-        <img class="site-logo" src="{{ site.asset_url | relative_url }}/images/oio.svg" alt="logo" />
-        <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+        <div class="d-flex align-items-center">
+            <img class="site-logo" src="{{ site.asset_url | relative_url }}/images/oio.svg" alt="logo" />
+            <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+        </div>
 
         <button
           class="navbar-toggler"
@@ -14,7 +16,6 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-            Menu
             <i class="fas fa-bars"></i>
         </button>
         {%- if page_paths -%}
