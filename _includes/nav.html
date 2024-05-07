@@ -3,7 +3,7 @@
         {%- assign default_paths = site.pages | map: "path" -%}
         {%- assign page_paths = site.header_pages | default: default_paths -%}
         <div class="d-flex align-items-center">
-            <img class="site-logo" src="{{ site.asset_url | relative_url }}/images/oio.svg" alt="logo" />
+            <img class="site-logo" src="{{ site.asset_url | relative_url }}/images/oio.png" alt="logo" />
             <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
         </div>
 
