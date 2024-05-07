@@ -3,7 +3,6 @@ layout: default
 ---
 
 {%- include header.html where="tag" -%}
-
-{% assign posts=site.posts | where: "tags", "github" %}
+{% assign posts=site.posts | where: "tags", page.tag %}
 {% include post-list.html posts=posts %}
 
