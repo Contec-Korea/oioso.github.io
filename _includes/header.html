@@ -28,12 +28,14 @@
 {% else %}
 {% assign bg_img = '/assets/images/home-bg.jpg' | relative_url %}
 <div class="site-heading">
-    <h1>{{ site.title | escape }}</h1>
+    <h1>OIOSO(응소) <span>TECH BLOG</span></h1>
     <span class="subheading">{{ site.description | escape }}</span>
 </div>
 {% endif %}
 {% endcapture %}
 
 <header class="masthead" style="background-image: url({{ bg_img }})">
-    {%- include container.html container_content=container_content -%}
+    <div class="container" >
+        {{ container_content }}
+    </div>
 </header>

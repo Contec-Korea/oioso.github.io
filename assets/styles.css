@@ -633,6 +633,7 @@ progress {
 .container-sm {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
+  position: relative;
   width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
@@ -10283,18 +10284,14 @@ header.masthead .page-heading,
 header.masthead .site-heading {
   text-align: center;
 }
-header.masthead .page-heading h1, header.masthead .page-heading .h1,
-header.masthead .site-heading h1,
-header.masthead .site-heading .h1 {
-  font-size: 3rem;
-}
+
 header.masthead .page-heading .subheading,
 header.masthead .site-heading .subheading {
-  font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.1;
   display: block;
   margin-top: 0.625rem;
+  word-break: keep-all;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 header.masthead .post-heading h1, header.masthead .post-heading .h1 {
@@ -10324,17 +10321,6 @@ header.masthead .post-heading .meta a {
   header.masthead {
     padding-top: 12.5rem;
     padding-bottom: 12.5rem;
-  }
-  header.masthead .page-heading h1, header.masthead .page-heading .h1,
-  header.masthead .site-heading h1,
-  header.masthead .site-heading .h1 {
-    font-size: 5rem;
-  }
-  header.masthead .post-heading h1, header.masthead .post-heading .h1 {
-    font-size: 3.5rem;
-  }
-  header.masthead .post-heading .subheading {
-    font-size: 1.875rem;
   }
 }
 
