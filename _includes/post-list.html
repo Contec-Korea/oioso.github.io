@@ -1,33 +1,30 @@
 {%- assign posts = include.posts -%}
 
-<div class="container">
-  <div class="d-grid">
-    <div class="mx-auto col-md-10 col-lg-8 col-xl-7 overflow-hidden">
-      <!-- Tag list -->
-      <div class="post-hashtag hashtag-box">
-        {% for tag in site.data.tags %}
-        {%- if page.tag == tag -%}
-        <a class="hashtag active" data-tag="{{tag}}" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
-          #{{ site.data.format[tag] }}
-        </a>
-        {%- else -%}
-        <a class="hashtag" data-tag="{{tag}}" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
-          #{{ site.data.format[tag] }}
-        </a>
-        {%- endif -%}
-        {% endfor %}
-      </div>
-      <!-- Divider-->
-      <hr class="my-4" />
-
-      {%- if posts.size > 0 -%}
-      <ul class="post-list">
-        {%- for post in posts -%}
-        {% include post-tile.html post=post %}
-        {%- endfor -%}
-      </ul>
-
-      {%- endif -%}
-    </div>
-  </div>
+{% capture container_content %}
+<!-- Tag list -->
+<div class="post-hashtag hashtag-box">
+  {% for tag in site.data.tags %}
+  {%- if page.tag == tag -%}
+  <a class="hashtag active" data-tag="{{tag}}" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
+    #{{ site.data.format[tag] }}
+  </a>
+  {%- else -%}
+  <a class="hashtag" data-tag="{{tag}}" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
+    #{{ site.data.format[tag] }}
+  </a>
+  {%- endif -%}
+  {% endfor %}
 </div>
+<!-- Divider-->
+<hr class="my-4" />
+
+{%- if posts.size > 0 -%}
+<ul class="post-list">
+  {%- for post in posts -%}
+  {% include post-tile.html post=post %}
+  {%- endfor -%}
+</ul>
+{%- endif -%}
+{% endcapture %}
+
+{%- include container.html container_content=container_content -%}

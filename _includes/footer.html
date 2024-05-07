@@ -1,10 +1,8 @@
+{% capture container_content %}
+  {%- include social.html -%}
+  <div class="small text-center text-muted fst-italic">{{- site.description | escape -}} &nbsp; Copyright &copy; Contec Inc. 2024</div>
+{% endcapture %}
+
 <footer class="border-top py-5">
-  <div class="container">
-    <div class="d-grid">
-      <div class="mx-auto col-md-10 col-lg-8 col-xl-7">
-        {%- include social.html -%}
-        <div class="small text-center text-muted fst-italic">{{- site.description | escape -}} &nbsp; Copyright &copy; Contec Inc. 2024</div>
-      </div>
-    </div>
-  </div>
+  {%- include container.html container_content=container_content -%}
 </footer>

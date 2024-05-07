@@ -3,13 +3,4 @@ layout: default
 ---
 
 {%- include header.html where="about" -%}
-
-<main class="mb-4">
-    <div class="container">
-        <div class="d-grid">
-            <div class="mx-auto col-md-10 col-lg-8 col-xl-7 overflow-hidden">
-                {{ content }}
-            </div>
-        </div>
-    </div>
-</main>
+{%- include container.html container_content=content -%}
