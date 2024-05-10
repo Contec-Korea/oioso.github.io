@@ -3,15 +3,21 @@
 {% capture container_content %}
 <!-- Tag list -->
 <div class="post-hashtag hashtag-box">
+  <a class="hashtag{% if page.tag == Null %} active{% endif %}" data-tag="{{ tag }}" href="{{ '/' | relative_url }}">
+    #All ({{site.posts.size}})
+  </a>
+
   {% for tag in site.data.tags %}
-  {%- if page.tag == tag -%}
-  <a class="hashtag active" data-tag="{{tag}}" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
-    #{{ site.data.format[tag] }}
-  </a>
-  {%- else -%}
-  <a class="hashtag" data-tag="{{tag}}" href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}">
-    #{{ site.data.format[tag] }}
-  </a>
+  {% assign tagPost=site.posts | where: "tags", tag %}
+  {%- if tagPost.size > 0 -%}
+    <a
+        class="hashtag{% if page.tag == tag %} active{%- endif %}"
+        data-tag="{{ tag }}"
+        href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}"
+    >
+      #{{ site.data.format[tag] }} ({{ tagPost.size }})
+    </a>
+
   {%- endif -%}
   {% endfor %}
 </div>
