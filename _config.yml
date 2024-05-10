@@ -13,7 +13,7 @@ description: '(주)컨텍 응용소프트웨어팀 기술블로그'
 baseurl: /oioso.github.io # the subpath of your site, e.g. /blog
 url: https://contec-korea.github.io/oioso.github.io # the base hostname & protocol for your site, e.g. http://example.com
 
-github_username:  Contec-Korea
+github_username: Contec-Korea
 
 header_pages:
   - about.markdown
