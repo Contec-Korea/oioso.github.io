@@ -10,6 +10,7 @@ tags: ["ci", "github", "action"]
 > 자바기반의 웹 어플리케이션을 주로 개발하고 있는 응소팀은 프론트/백앤드 개발자들이 개발한 소스를 커밋하면 자동으로 Test > Build 과정을 실행하고 싶었습니다.
 > CI 적용 전에는 로컬에서 테스트와 빌드 절차를 진행한 후 문제가 없으면 배포를 하는 프로세스였습니다.
 
+
 무슨 문제가 있었어요?
 ---
 > On-demand 기반이긴 하나, 다행히 Bitbucket을 이용한 Git을 통한 소스관리가 되어 있었습니다.
@@ -46,10 +47,8 @@ Pre-requisition
 Details
 ---
 > 아래 action 파일은 github repository/.github/workflows/ 위치해 있습니다.
-> 
 
-<pre>
-<code>
+```yaml
 name: Build and Slack
 
 # develop 브랜치에 pull request한 변경사항이 Merged 되는 시점에 해당 workflow가 실행된다.
@@ -108,9 +107,8 @@ jobs:
     if: ${{ always() }}
     runs-on: ubuntu-latest
     needs: [ build ]
+```
 
-</code>
-</pre>
 
 Pros and Cons
 ---

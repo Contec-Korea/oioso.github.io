@@ -10,14 +10,13 @@
   {% for tag in site.data.tags %}
   {% assign tagPost=site.posts | where: "tags", tag %}
   {%- if tagPost.size > 0 -%}
-    <a
-        class="hashtag{% if page.tag == tag %} active{%- endif %}"
-        data-tag="{{ tag }}"
-        href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}"
-    >
-      #{{ site.data.format[tag] }} ({{ tagPost.size }})
-    </a>
-
+  <a
+    class="hashtag{% if page.tag == tag %} active{%- endif %}"
+    data-tag="{{ tag }}"
+    href="{{ '/' | relative_url }}t/{{ tag | downcase | replace: ' ', '-' }}"
+  >
+    #{{ site.data.format[tag] }} ({{ tagPost.size }})
+  </a>
   {%- endif -%}
   {% endfor %}
 </div>

@@ -186,16 +186,18 @@
 }
 
 .post-list {
-  margin-left: 0;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
 
   > li {
     margin-bottom: $spacing-unit;
+    padding-bottom: $spacing-unit;
     border-bottom: 1px solid #ddd;
 
     &:nth-last-child(1) {
       border-bottom: 0;
+      margin-bottom: 0;
     }
   }
 }
@@ -243,42 +245,14 @@
 .post-content {
   margin-bottom: $spacing-unit;
 
-  h1 {
-    @include relative-font-size(2.375);
-
-    @include media-query($on-laptop) {
-      @include relative-font-size(2.125);
-    }
-  }
-
-  h2 {
-    @include relative-font-size(2);
-
-    @include media-query($on-laptop) {
-      @include relative-font-size(1.75);
-    }
-  }
-
-  h3 {
-    @include relative-font-size(1.625);
-
-    @include media-query($on-laptop) {
-      @include relative-font-size(1.375);
-    }
-  }
-
-  h4 {
-    @include relative-font-size(1.25);
-
-    @include media-query($on-laptop) {
-      @include relative-font-size(1.125);
-    }
+  h1, h2, h3, h4 {
+    margin-top: 24px;
+    margin-bottom: 12px;
   }
 }
 
 .masthead {
   position: relative;
-  margin-bottom: 3rem;
   padding-top: calc(8rem + 57px);
   padding-bottom: 8rem;
   background: #6c757d no-repeat scroll center center;
@@ -342,6 +316,7 @@
 
 .post-preview {
   margin-bottom: $spacing-unit;
+
   .post-link {
     text-decoration: none;
 
@@ -355,7 +330,6 @@
   display: flex;
   gap: 8px 5px;
   flex-wrap: wrap;
-  margin-bottom: $spacing-unit;
 
   .hashtag {
     text-decoration: none;
